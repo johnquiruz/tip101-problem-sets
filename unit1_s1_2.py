@@ -50,7 +50,16 @@ def main():
     # print(factorial(5))
 
 
-    
+    # print(squares([1, 2, 3, 4]))
+
+
+    # print(multiply_list([1, 2, 3], 3))
+
+
+    # print(count_evens([1, 5, 7, 9]))
+    # print(count_evens([2, 4, 6, 8]))
+
+
     
 
 
@@ -167,6 +176,33 @@ def factorial(n):
 
     return result
 
+
+# Problem 13: Count the Squares
+def squares(list):
+    result = []
+    for i in range(len(list)):
+        result.append(list[i] ** 2)
+
+    return result
+
+
+# Problem 14: Multiply List
+def multiply_list(list, multiplier):
+    result = []
+    for i in range(len(list)):
+        result.append(list[i] * multiplier)
+
+    return result
+
+
+# Problem 15: Count Evens
+def count_evens(list):
+    evens = 0
+    for i in range(len(list)):
+        if list[i] % 2 == 0:
+            evens += 1
+
+    return evens
 
 
 main()
