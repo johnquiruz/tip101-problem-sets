@@ -22,9 +22,15 @@ def main():
     # print(flag2)
 
 
-    nums = [0, 4, 3, 1, 5]
-    missing_num = find_missing(nums)
-    print(missing_num)
+    # nums = [0, 4, 3, 1, 5]
+    # missing_num = find_missing(nums)
+    # print(missing_num)
+
+
+    list = [1, 2, 3, 4, 5]
+    # print(list)
+    reversed_list = reverse_list(list)
+    print(reversed_list)
 
 
 
@@ -94,5 +100,63 @@ def find_missing(list):
             return i
     
     return len(list)
+
+
+
+# Problem 6: Reverse List
+
+# *** Understand ***
+
+# This is a function in which a client inputs a list of integers
+# and returns a new list containing the integers of the parameter
+# in reverse order.
+
+# --------------------
+# Sample run:
+# --------------------
+
+# list = [1, 2, 3, 4, 5]
+# reversed_list = reverse_list(list)
+# print(reversed_list)
+
+# Output: [5, 4, 3, 2, 1]
+
+# --------------------
+# Input, Datatypes:
+# --------------------
+
+# list, list
+
+# --------------------
+# Output, Datatypes:
+# --------------------
+
+# reversed_list, list
+
+# --------------------
+# Process
+# --------------------
+
+# for loop, iterate in reverse order
+# append method
+
+# --------------------
+# Function Steps
+# --------------------
+
+# Pass argument into reverse list function
+# Initialize a new list
+# For each element in the input list, starting from the last element:
+#   # Append the element to the new list
+# Return the new list
+
+def reverse_list(list):
+    result = []
+    for i in range(len(list) - 1, -1, -1):
+        result.append(list[i])
+    
+    return result
+
+
 
 main()
