@@ -40,7 +40,19 @@ def main():
 
     # multiplication_table(7)
 
-    list_to_number([1, 0, 3])
+    # list_to_number([1, 0, 3])
+
+    # nums = [0,0,100,1,0,2,3,0,0,4]
+    # new_nums = move_zeroes(nums)
+    # print(new_nums)
+
+
+    # nums = [3,4,8,1,5,2,3,32]
+    # print_odd_indices(nums)
+
+    lst = [1,2,6,5,2,1,3,2,2]
+    index_list = find_all_occurrences(lst, 1)
+    print(index_list)
 
 
 
@@ -274,12 +286,140 @@ def multiplication_table(number):
 
 def list_to_number(digits):
     result = ""
+
     for i in digits:
         result = result + str(i)
 
     result = int(result)
+
     print(result)
 
+
+
+# Problem 10: Move Zeroes
+
+# UNDERSTAND
+
+# This function takes a LIST OF INTEGERS as a parameter and creates
+# a NEW LIST that contains the values of the parameter list but is sorted so that 
+# any existing zeroes in it are all pushed to the end of the list. The
+# NON-ZERO INTEGERS in the list MAINTAIN THEIR RELATIVITY amongst each other and
+# the new list is RETURNED to the client.
+
+# Input, data types:
+# list of integers called "numbers", list
+#
+# Output, data types:
+# an integer variable called "count"
+# list of integers called "sorted", list
+#
+# Calculations:
+# count the amount of zeroes in the parameter
+
+# PLAN
+
+# Define the function
+# Declare the list of integers called "numbers" as a parameter
+# Declare a variable called "count"
+# Declare an empty list called "sorted"
+# Check each element in the parameter "numbers"
+#   # if the number is a zero
+#   #   # increment the counter by 1
+#   # otherwise, if the number is non-zero
+#   #   # add the current number to the new list "sorted"
+# Declare a loop to iterate the same number of times as the amount of zeroes in "count"
+#   # On the current iteration, add 1 zero to the new list "sorted"
+# Return the new list "sorted"
+
+# IMPLEMENT
+def move_zeroes(numbers):
+    zero_count = 0
+    sorted = []
+
+    for number in numbers:
+        if number == 0:
+            zero_count += 1
+        else:
+            sorted.append(number)
+    
+    for i in range(zero_count):
+        sorted.append(0)
+
+    return sorted
+
+
+
+# Problem 11: Odd Indices
+
+# UNDERSTAND
+
+# This function takes in any size LIST OF INTEGERS (signed) as a parameter
+# and prints each element inside of it that exists in an odd index (ex. indices: 1, 3, 5, 7, etc.)
+# Zero does NOT count as an odd number.
+
+# Input, data types:
+#   # list of integers called "numbers", list
+#
+# Output, data types:
+#   # each element in the parameter that falls on an odd index, integer
+#
+# Calculations:
+#   # N/A
+
+# PLAN 
+
+# Define the function called "print odd indices"
+# Declare a list of integers called "numbers" as the parameter
+# Check each element in the list - use the range method since we need to know the index
+#   # If the position of the index is not divisible by 2
+#   #   # Print the element inside the list on the current index
+
+# IMPLEMENT
+
+def print_odd_indices(numbers):
+    for i in range(len(numbers)):
+        if i % 2 != 0:
+            print(numbers[i])
+
+
+
+# Problem 12: List Occurrences
+
+# UNDERSTAND
+
+# This function takes in a LIST OF INTEGERS (sign unspecified) and a SINGLE INTEGER
+# as the parameters and creates A NEW LIST that contains INDICES where the single parameter
+# OCCURS in the parameter list. RETURNS it.
+
+# Input, data types:
+#   # list of integers called "numbers", list
+#   # a variable called "target", integer
+#
+# Output, data types:
+#   # new list called "occurences", list
+#
+# Calculations, data types:
+#   # N/A
+
+# PLAN
+# Define the function and call it "find all occurences"
+# Declare a list of integers called "numbers" as the parameter
+# Declare a variable called "target" as the second parameter
+# Declare a new list called "occurrences"
+# Check each element in the parameter
+#   # Compare each element with the second parameter "target"; if they match
+#   #   # Save the index of that element into the new list "occurrences"
+# Return the new list "occurrences"
+
+# IMPLEMENT
+
+def find_all_occurrences(numbers, target):
+    occurrences = []
+    for i in range(len(numbers)):
+        if numbers[i] == target:
+            occurrences.append(i)
+
+    return occurrences
 
 
 main()
