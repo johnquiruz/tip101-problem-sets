@@ -39,8 +39,14 @@ def main():
 
     # sum_range(3, 9)
 
-    lst = ["squirtle", "gengar", "charizard", "pikachu", "blastoise"]
-    print_list(lst)
+    # lst = ["squirtle", "gengar", "charizard", "pikachu", "blastoise"]
+    # print_list(lst)
+
+    x = 15
+    y = 20
+
+    conditional_statements(x, y)
+
 
 
 
@@ -92,5 +98,18 @@ def print_list(list):
         print(pokemon)
 
 
+# Hackerrank assessment practice
+
+# Problem 1: 
+
+def conditional_statements(x, y):
+    if x >= y and y < 30:
+        print('A')
+    elif x <= y and x < 10:
+        print('B')
+    elif x >= 15 and x < y:
+        print('C')
+    else:
+        print('D')
 
 main()
